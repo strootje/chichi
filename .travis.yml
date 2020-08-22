@@ -1,0 +1,26 @@
+language: node_js
+node_js: lts/*
+
+cache:
+  npm: true
+  directories:
+  - $HOME/.pnpm-store/
+
+branches:
+  only:
+  - master
+
+before_install:
+- curl -L https://unpkg.com/@pnpm/self-installer | node
+
+install:
+- pnpm i
+
+script:
+- pnpm recursive run bundle
+
+deploy:
+	provider: npm
+	tag: next
+	email: "YOUR_EMAIL_ADDRESS"
+	api_key: "YOUR_AUTH_TOKEN"

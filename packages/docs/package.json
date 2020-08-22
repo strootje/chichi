@@ -3,7 +3,7 @@
 	"name": "@chichi/docs",
 	"version": "0.1.0",
 	"scripts": {
-		"serve": "start-storybook -h 0.0.0.0 -p 3000"
+		"serve": "start-storybook --ci -h 0.0.0.0 -p 3000"
 	},
 	"dependencies": {
 		"@babel/core": "^7.11.4",
@@ -25,6 +25,7 @@
 		"@types/webpack": "^4.41.21",
 		"babel-loader": "^8.1.0",
 		"css-loader": "^4.2.1",
+		"sass": "^1.26.10",
 		"sass-loader": "^9.0.3",
 		"style-loader": "^1.2.1",
 		"ts-loader": "^8.0.2",
