@@ -7,9 +7,6 @@
 	},
 	"dependencies": {
 		"@babel/core": "^7.11.4",
-		"@chichi/app": "workspace:*",
-		"@chichi/base": "workspace:*",
-		"@chichi/extensions": "workspace:*",
 		"@storybook/addon-a11y": "^6.0.16",
 		"@storybook/addon-actions": "^6.0.16",
 		"@storybook/addon-controls": "^6.0.16",
@@ -19,6 +16,9 @@
 		"@storybook/preact": "^6.0.16",
 		"@storybook/preset-scss": "^1.0.2",
 		"@storybook/theming": "^6.0.16",
+		"chichi-app": "workspace:*",
+		"chichi-base": "workspace:*",
+		"chichi-extensions": "workspace:*",
 		"preact": "^10.4.7"
 	},
 	"devDependencies": {

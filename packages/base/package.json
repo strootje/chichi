@@ -1,5 +1,5 @@
 {
-	"name": "@chichi/base",
+	"name": "chichi-base",
 	"version": "0.1.0",
 	"source": "./src/index.ts",
 	"types": "./dist/index.d.ts",

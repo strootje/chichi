@@ -36,9 +36,6 @@ importers:
   packages/docs:
     dependencies:
       '@babel/core': 7.11.4
-      '@chichi/app': 'link:../app'
-      '@chichi/base': 'link:../base'
-      '@chichi/extensions': 'link:../extensions'
       '@storybook/addon-a11y': 6.0.16
       '@storybook/addon-actions': 6.0.16
       '@storybook/addon-controls': 6.0.16
@@ -48,6 +45,9 @@ importers:
       '@storybook/preact': 6.0.16_@babel+core@7.11.4+preact@10.4.7
       '@storybook/preset-scss': 1.0.2_42a41697f3fd458ef962a7a24f53c7b8
       '@storybook/theming': 6.0.16
+      chichi-app: 'link:../app'
+      chichi-base: 'link:../base'
+      chichi-extensions: 'link:../extensions'
       preact: 10.4.7
     devDependencies:
       '@types/webpack': 4.41.21
@@ -62,9 +62,6 @@ importers:
       webpack: 4.44.1_webpack@4.44.1
     specifiers:
       '@babel/core': ^7.11.4
-      '@chichi/app': 'workspace:*'
-      '@chichi/base': 'workspace:*'
-      '@chichi/extensions': 'workspace:*'
       '@storybook/addon-a11y': ^6.0.16
       '@storybook/addon-actions': ^6.0.16
       '@storybook/addon-controls': ^6.0.16
@@ -76,6 +73,9 @@ importers:
       '@storybook/theming': ^6.0.16
       '@types/webpack': ^4.41.21
       babel-loader: ^8.1.0
+      chichi-app: 'workspace:*'
+      chichi-base: 'workspace:*'
+      chichi-extensions: 'workspace:*'
       css-loader: ^4.2.1
       preact: ^10.4.7
       rimraf: ^3.0.2
