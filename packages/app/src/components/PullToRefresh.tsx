@@ -1,4 +1,4 @@
-import * as ClassNames from 'classnames';
+import ClassNames from 'classnames';
 import { Fragment, FunctionalComponent, h, JSX } from 'preact';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 

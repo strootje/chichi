@@ -1,4 +1,4 @@
-import * as ClassNames from 'classnames';
+import ClassNames from 'classnames';
 import { ComponentChildren, FunctionalComponent, h, JSX, toChildArray } from 'preact';
 
 export interface MenuProps extends JSX.DOMAttributes<HTMLElement> {

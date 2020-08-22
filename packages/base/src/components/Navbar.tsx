@@ -1,4 +1,4 @@
-import * as ClassNames from 'classnames';
+import ClassNames from 'classnames';
 import { FunctionalComponent, h, JSX, toChildArray, VNode } from 'preact';
 
 export interface NavbarProps extends JSX.DOMAttributes<HTMLElement> {

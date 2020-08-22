@@ -1,4 +1,4 @@
-import * as ClassNames from 'classnames';
+import ClassNames from 'classnames';
 import { FunctionalComponent, h, JSX } from 'preact';
 
 export interface BreadcrumbProps extends JSX.DOMAttributes<HTMLElement> {

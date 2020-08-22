@@ -6,13 +6,17 @@ importers:
       '@types/classnames': 2.2.10
       microbundle: 0.12.3
       preact: 10.4.7
+      rimraf: 3.0.2
       rollup: 2.26.5
+      sass: 1.26.10
     specifiers:
       '@types/classnames': ^2.2.10
       classnames: ^2.2.6
       microbundle: ^0.12.3
       preact: ^10.4.7
+      rimraf: ^3.0.2
       rollup: ^2.26.5
+      sass: ^1.26.10
   packages/base:
     dependencies:
       classnames: 2.2.6
@@ -20,12 +24,14 @@ importers:
       '@types/classnames': 2.2.10
       microbundle: 0.12.3
       preact: 10.4.7
+      rimraf: 3.0.2
       rollup: 2.26.5
     specifiers:
       '@types/classnames': ^2.2.10
       classnames: ^2.2.6
       microbundle: ^0.12.3
       preact: ^10.4.7
+      rimraf: ^3.0.2
       rollup: ^2.26.5
   packages/docs:
     dependencies:
@@ -47,6 +53,7 @@ importers:
       '@types/webpack': 4.41.21
       babel-loader: 8.1.0_fbab4801791d746d265885e0d19f0bda
       css-loader: 4.2.1_webpack@4.44.1
+      rimraf: 3.0.2
       sass: 1.26.10
       sass-loader: 9.0.3_sass@1.26.10+webpack@4.44.1
       style-loader: 1.2.1_webpack@4.44.1
@@ -71,6 +78,7 @@ importers:
       babel-loader: ^8.1.0
       css-loader: ^4.2.1
       preact: ^10.4.7
+      rimraf: ^3.0.2
       sass: ^1.26.10
       sass-loader: ^9.0.3
       style-loader: ^1.2.1
@@ -84,12 +92,14 @@ importers:
       '@types/classnames': 2.2.10
       microbundle: 0.12.3
       preact: 10.4.7
+      rimraf: 3.0.2
       rollup: 2.26.5
     specifiers:
       '@types/classnames': ^2.2.10
       classnames: ^2.2.6
       microbundle: ^0.12.3
       preact: ^10.4.7
+      rimraf: ^3.0.2
       rollup: ^2.26.5
 lockfileVersion: 5.1
 packages:
@@ -8126,7 +8136,6 @@ packages:
   /rimraf/3.0.2:
     dependencies:
       glob: 7.1.6
-    dev: false
     hasBin: true
     resolution:
       integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
