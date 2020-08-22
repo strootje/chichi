@@ -1,0 +1,19 @@
+.drawer {
+	top: 0;
+	left: 0vw;
+	width: 80vw;
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	position: fixed;
+	z-index: 99;
+
+	transform: translateX(110vw);
+	transition: transform 360ms ease-in-out, box-shadow 360ms ease-in-out;
+
+	&.is-active {
+		transform: translateX(20vw);
+		box-shadow: 0 0 50px rgba(0,0,0,0.5);
+	}
+}
+

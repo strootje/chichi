@@ -1,0 +1,12 @@
+.stack {
+	display: flex;
+	flex-wrap: nowrap;
+
+	&.is-horizontal {
+		flex-direction: row;
+	}
+
+	&.is-vertical {
+		flex-direction: column;
+	}
+}

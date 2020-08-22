@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"pretty": true,
+		"module": "CommonJS",
+		"target": "ESNext",
+		"strict": true,
+		"jsx": "react",
+		"jsxFactory": "h"
+	},
+	"exclude": [
+		"dist",
+		"node_modules"
+	]
+}

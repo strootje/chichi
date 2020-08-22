@@ -1,0 +1,22 @@
+{
+	"extends": "../../tsconfig",
+	"compilerOptions": {
+		"rootDir": "./stories",
+		"baseUrl": "./"
+	},
+	"include": [
+		"./stories/**/*.ts",
+		"./stories/**/*.tsx"
+	],
+	"references": [
+		{
+			"path": "../base"
+		},
+		{
+			"path": "../extensions"
+		},
+		{
+			"path": "../app"
+		}
+	]
+}

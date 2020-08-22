@@ -1,0 +1,34 @@
+{
+	"private": true,
+	"name": "@chichi/docs",
+	"version": "0.1.0",
+	"scripts": {
+		"serve": "start-storybook -h 0.0.0.0 -p 3000"
+	},
+	"dependencies": {
+		"@babel/core": "^7.11.4",
+		"@chichi/app": "workspace:*",
+		"@chichi/base": "workspace:*",
+		"@chichi/extensions": "workspace:*",
+		"@storybook/addon-a11y": "^6.0.16",
+		"@storybook/addon-actions": "^6.0.16",
+		"@storybook/addon-controls": "^6.0.16",
+		"@storybook/addon-storysource": "^6.0.16",
+		"@storybook/addon-viewport": "^6.0.16",
+		"@storybook/addons": "^6.0.16",
+		"@storybook/preact": "^6.0.16",
+		"@storybook/preset-scss": "^1.0.2",
+		"@storybook/theming": "^6.0.16",
+		"preact": "^10.4.7"
+	},
+	"devDependencies": {
+		"@types/webpack": "^4.41.21",
+		"babel-loader": "^8.1.0",
+		"css-loader": "^4.2.1",
+		"sass-loader": "^9.0.3",
+		"style-loader": "^1.2.1",
+		"ts-loader": "^8.0.2",
+		"ts-node": "^8.10.2",
+		"webpack": "^4.44.1"
+	}
+}
