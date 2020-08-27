@@ -19,6 +19,6 @@ install:
 script:
 - pnpm recursive run bundle
 
-deploy:
-	provider: npm
-	tag: next
+# deploy:
+# provider: npm
+# tag: next
