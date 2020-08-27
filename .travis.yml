@@ -18,6 +18,8 @@ install:
 
 script:
 - pnpm recursive run bundle
+# - pnpm recursive pack
+- (cd ./packages/docs && pnpm run build)
 
 deploy:
   on:
