@@ -28,7 +28,7 @@ deploy:
   skip_cleanup: true
   keep_history: true
   github_token: $GITHUB_TOKEN
-  local_dir: ./storybook-static
+  local_dir: .packages/docs/storybook-static
 
 # deploy:
 # provider: npm
