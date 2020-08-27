@@ -1,5 +1,5 @@
-import { Drawer } from '@chichi/app';
-import { Box } from '@chichi/base/src';
+import { Drawer } from 'chichi-app';
+import { Box } from 'chichi-base/src';
 import { h } from 'preact';
 
 export default {

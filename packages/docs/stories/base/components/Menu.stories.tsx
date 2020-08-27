@@ -1,4 +1,4 @@
-import { Box, Menu } from '@chichi/base';
+import { Box, Menu } from 'chichi-base';
 import { h } from 'preact';
 
 export default {

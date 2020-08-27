@@ -242,7 +242,7 @@
         "affectsGlobalScope": false
       },
       "./src/elements/Badge.tsx": {
-        "version": "b1248ae5107e6f5bca2818d88ce2af199d726552023fb24d23a6fe1f82326042",
+        "version": "2c7b899920690e4b8feeb6bb23ca5aab913417ef56fe572f27a3c956be0cae45",
         "signature": "a8778beb1390c49fdc5021c3adec5094e0369cc3fa0ccdd5870268e0d5be9712",
         "affectsGlobalScope": false
       },
@@ -252,7 +252,7 @@
         "affectsGlobalScope": false
       },
       "./src/layout/Divider.tsx": {
-        "version": "d297e6c572bef5ada1cf797f0e402c8eb97563145b43b66f798825f6da9f6ec1",
+        "version": "609f548d5d2c8969539dae344b1b871e3bce813ced2f4481eb409a26090334b3",
         "signature": "44dc2a52d0912b1916b19bb772d00213464cbed9981a2eaf41ff7b11ce4342ef",
         "affectsGlobalScope": false
       },

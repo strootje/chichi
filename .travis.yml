@@ -19,6 +19,15 @@ install:
 script:
 - pnpm recursive run bundle
 
+deploy:
+  on:
+    branch: master
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $GITHUB_TOKEN
+  local_dir: ./storybook-static
+
 # deploy:
 # provider: npm
 # tag: next

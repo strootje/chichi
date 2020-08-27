@@ -1,4 +1,4 @@
-import { Box, Button, Navbar } from '@chichi/base';
+import { Box, Button, Navbar } from 'chichi-base';
 import { action } from '@storybook/addon-actions';
 import { h, JSX } from 'preact';
 

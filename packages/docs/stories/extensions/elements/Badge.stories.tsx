@@ -1,5 +1,5 @@
-import { Button } from '@chichi/base';
-import { Badge } from '@chichi/extensions';
+import { Button } from 'chichi-base';
+import { Badge } from 'chichi-extensions';
 import { h } from 'preact';
 
 export default {

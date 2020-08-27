@@ -1,4 +1,4 @@
-import { Divider } from '@chichi/extensions';
+import { Divider } from 'chichi-extensions';
 import { h } from 'preact';
 
 export default {

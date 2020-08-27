@@ -1,4 +1,4 @@
-import { Content } from '@chichi/base';
+import { Content } from 'chichi-base';
 import { h } from 'preact';
 
 export default {

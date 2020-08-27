@@ -1,4 +1,4 @@
-import { Card, Content } from '@chichi/base';
+import { Card, Content } from 'chichi-base';
 import { h } from 'preact';
 
 export default {

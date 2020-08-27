@@ -1,4 +1,4 @@
-import { Stack } from '@chichi/app';
+import { Stack } from 'chichi-app';
 import { h } from 'preact';
 
 export default {

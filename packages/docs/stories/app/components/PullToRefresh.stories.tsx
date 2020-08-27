@@ -1,5 +1,5 @@
-import { PullToRefresh } from '@chichi/app';
-import { Box } from '@chichi/base/src';
+import { PullToRefresh } from 'chichi-app';
+import { Box } from 'chichi-base/src';
 import { h } from 'preact';
 
 export default {

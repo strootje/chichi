@@ -1,4 +1,4 @@
-import { Breadcrumb, Content, Box } from '@chichi/base';
+import { Breadcrumb, Content, Box } from 'chichi-base';
 import { h } from 'preact';
 
 export default {

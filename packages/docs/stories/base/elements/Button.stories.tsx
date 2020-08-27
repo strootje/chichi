@@ -1,4 +1,4 @@
-import { Button } from '@chichi/base';
+import { Button } from 'chichi-base';
 import { action } from '@storybook/addon-actions';
 import { h } from 'preact';
 

@@ -1,4 +1,4 @@
-import { Icon } from '@chichi/base';
+import { Icon } from 'chichi-base';
 import { h } from 'preact';
 
 export default {

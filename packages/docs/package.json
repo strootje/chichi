@@ -1,8 +1,9 @@
 {
 	"private": true,
-	"name": "@chichi/docs",
+	"name": "chichi-docs",
 	"version": "0.1.0",
 	"scripts": {
+		"build": "build-storybook",
 		"serve": "start-storybook --ci -h 0.0.0.0 -p 3000"
 	},
 	"dependencies": {

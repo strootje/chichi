@@ -1,4 +1,4 @@
-import { Delete } from '@chichi/base';
+import { Delete } from 'chichi-base';
 import { h } from 'preact';
 
 export default {
