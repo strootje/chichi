@@ -22,5 +22,3 @@ script:
 deploy:
 	provider: npm
 	tag: next
-	email: "YOUR_EMAIL_ADDRESS"
-	api_key: "YOUR_AUTH_TOKEN"
