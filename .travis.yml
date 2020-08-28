@@ -24,7 +24,7 @@ jobs:
   - pnpm recursive run bundle
   - pnpm recursive exec pnpm pack
   after_script:
-  - pnpm recursive exec -- pnpm publish --no-git-checks --dry-run
+  - pnpm recursive exec -- pnpm publish --no-git-checks --tag next
 - name: Release
   if: type == push
   script:
