@@ -16,20 +16,46 @@ before_install:
 install:
 - pnpm i
 
-script:
-- pnpm recursive run bundle
-# - pnpm recursive pack
-- (cd ./packages/docs && pnpm run build)
+jobs:
+- name: Pre-Release
+  if: type == pull_request
+  script:
+  - pnpm recursive exec pnpm version prerelease -- --preid next
+  - pnpm recursive run bundle
+  - pnpm recursive exec pnpm pack
+- name: Release
+  install:
+  - pnpm i
+  script:
+  - pnpm recursive exec pnpm version patch
+  - pnpm recursive run bundle
+  - pnpm recursive exec pnpm pack
+
+after_success:
+- git commit -am "[skip ci] updated version"
+- git push
 
 deploy:
+- provider: npm
   on:
+    type: pull_request
     branch: master
-  provider: pages
-  skip_cleanup: true
+  cleanup: false
+  email: $NPM_EMAIL
+  api_token: $NPM_AUTH_TOKEN
+  tag: next
+- provider: npm
+  on:
+    type: push
+    branch: master
+  cleanup: false
+  email: $NPM_EMAIL
+  api_token: $NPM_AUTH_TOKEN
+- provider: pages
+  on:
+    type: push
+    branch: master
+  cleanup: false
   keep_history: true
   github_token: $GITHUB_TOKEN
   local_dir: ./packages/docs/storybook-static
-
-# deploy:
-# provider: npm
-# tag: next
