@@ -20,11 +20,11 @@ jobs:
 - name: Pre-Release
   if: type == pull_request
   script:
-  - pnpm recursive exec pnpm version prerelease -- --preid next
+  - pnpm recursive exec -- pnpm version prerelease --preid next
   - pnpm recursive run bundle
   - pnpm recursive exec pnpm pack
-  after_success:
-  - pnpm recursive exec pnpm publish --no-git-checks --dry-run
+  after_script:
+  - pnpm recursive exec -- pnpm publish --no-git-checks --dry-run
 - name: Release
   if: type == push
   script:
