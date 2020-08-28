@@ -23,6 +23,8 @@ jobs:
   - pnpm recursive exec pnpm version prerelease -- --preid next
   - pnpm recursive run bundle
   - pnpm recursive exec pnpm pack
+  after_success:
+  - pnpm recursive exec pnpm publish
 - name: Release
   if: type == push
   script:
@@ -33,27 +35,17 @@ jobs:
 
 after_success:
 - git commit -am "[skip ci] updated version"
-- git push origin HEAD:$TRAVIS_BRANCH
+- git push origin HEAD:$TRAVIS_PULL_REQUEST_BRANCH
 
 deploy:
 - provider: npm
   on:
-    type: pull_request
-    branch: master
-  cleanup: false
-  email: $NPM_EMAIL_ADDRESS
-  api_token: $NPM_AUTH_TOKEN
-  tag: next
-- provider: npm
-  on:
-    type: push
     branch: master
   cleanup: false
   email: $NPM_EMAIL_ADDRESS
   api_token: $NPM_AUTH_TOKEN
 - provider: pages
   on:
-    type: push
     branch: master
   cleanup: false
   keep_history: true
