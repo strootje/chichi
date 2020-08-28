@@ -35,7 +35,7 @@ jobs:
 
 after_success:
 - git commit -am "[skip ci] updated version"
-- git push origin HEAD:$TRAVIS_PULL_REQUEST_BRANCH
+- git push -q https://${GITHUB_TOKEN}@github.com/strootje/chichi HEAD:$TRAVIS_PULL_REQUEST_BRANCH
 
 deploy:
 - provider: npm
