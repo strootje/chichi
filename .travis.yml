@@ -27,6 +27,7 @@ jobs:
   - echo always-auth=true >> .npmrc
   - echo _auth=$NPM_AUTH_TOKEN >> .npmrc
   - echo email=$NPM_EMAIL_ADDRESS >> .npmrc
+  - pnpm recursive exec cp ./../../.npmrc ./.npmrc
   - pnpm recursive exec -- pnpm publish --no-git-checks --tag next
 - name: Release
   if: type == push
