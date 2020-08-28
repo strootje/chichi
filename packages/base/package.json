@@ -1,6 +1,6 @@
 {
 	"name": "chichi-base",
-	"version": "0.1.0",
+	"version": "0.1.1-next.4",
 	"source": "./src/index.ts",
 	"types": "./dist/index.d.ts",
 	"main": "./dist/index.js",
