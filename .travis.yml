@@ -17,26 +17,11 @@ install:
 - pnpm i
 
 jobs:
-- name: Pre-Release
-  if: type == pull_request
-  script:
-  - pnpm recursive exec -- pnpm version prerelease --preid next
-  - pnpm recursive run bundle
-  - pnpm recursive exec pnpm pack
-  after_script:
-  - pnpm set //registry.npmjs.org/:_authToken $NPM_AUTH_TOKEN
-  - pnpm recursive exec -- pnpm publish --no-git-checks --tag next
-- name: Release
-  if: type == push
+- name: build
   script:
   - pnpm recursive exec pnpm version patch
   - pnpm recursive run bundle
-  - pnpm recursive exec pnpm pack
   - (cd ./packages/docs && pnpm run build)
-
-after_success:
-- git commit -am "[skip ci] updated version"
-- git push -q https://${GITHUB_TOKEN}@github.com/strootje/chichi HEAD:$TRAVIS_PULL_REQUEST_BRANCH
 
 deploy:
 - provider: npm
