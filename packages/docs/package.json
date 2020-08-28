@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "chichi-docs",
-	"version": "0.1.1-next.3",
+	"version": "0.1.1-next.4",
 	"scripts": {
 		"build": "build-storybook",
 		"serve": "start-storybook --ci -h 0.0.0.0 -p 3000"
