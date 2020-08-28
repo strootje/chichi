@@ -33,7 +33,7 @@ jobs:
 
 after_success:
 - git commit -am "[skip ci] updated version"
-- git push origin $TRAVIS_BRANCH
+- git push origin HEAD:$TRAVIS_BRANCH
 
 deploy:
 - provider: npm
@@ -41,7 +41,7 @@ deploy:
     type: pull_request
     branch: master
   cleanup: false
-  email: $NPM_EMAIL
+  email: $NPM_EMAIL_ADDRESS
   api_token: $NPM_AUTH_TOKEN
   tag: next
 - provider: npm
@@ -49,7 +49,7 @@ deploy:
     type: push
     branch: master
   cleanup: false
-  email: $NPM_EMAIL
+  email: $NPM_EMAIL_ADDRESS
   api_token: $NPM_AUTH_TOKEN
 - provider: pages
   on:
