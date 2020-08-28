@@ -24,10 +24,7 @@ jobs:
   - pnpm recursive run bundle
   - pnpm recursive exec pnpm pack
   after_script:
-  - echo always-auth=true >> .npmrc
-  - echo _auth=$NPM_AUTH_TOKEN >> .npmrc
-  - echo email=$NPM_EMAIL_ADDRESS >> .npmrc
-  - pnpm recursive exec cp ./../../.npmrc ./.npmrc
+  - pnpm set //registry.npmjs.org/:_authToken $NPM_AUTH_TOKEN
   - pnpm recursive exec -- pnpm publish --no-git-checks --tag next
 - name: Release
   if: type == push
