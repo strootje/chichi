@@ -33,7 +33,7 @@ jobs:
 
 after_success:
 - git commit -am "[skip ci] updated version"
-- git push
+- git push origin $TRAVIS_BRANCH
 
 deploy:
 - provider: npm
