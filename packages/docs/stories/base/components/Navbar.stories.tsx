@@ -1,5 +1,5 @@
-import { Box, Button, Navbar } from 'chichi-base';
 import { action } from '@storybook/addon-actions';
+import { Box, Button, Navbar } from 'chichi-base';
 import { h, JSX } from 'preact';
 
 export default {
@@ -15,10 +15,10 @@ const myAction: JSX.MouseEventHandler<HTMLAnchorElement> = evt => {
 
 export const Basic = () => (
 	<Box>
-		<Navbar>
+		<Navbar color='primary'>
 			<Navbar.Brand>
 				<Navbar.Item href="https://bulma.io" onClick={myAction}>
-					<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+					<img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28" />
 				</Navbar.Item>
 
 				<Navbar.Burger />

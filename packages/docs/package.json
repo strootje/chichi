@@ -17,9 +17,10 @@
 		"@storybook/preact": "^6.0.16",
 		"@storybook/preset-scss": "^1.0.2",
 		"@storybook/theming": "^6.0.16",
-		"chichi-app": "workspace:*",
-		"chichi-base": "workspace:*",
-		"chichi-extensions": "workspace:*",
+		"chichi-app": "*",
+		"chichi-base": "*",
+		"chichi-core": "*",
+		"chichi-extensions": "*",
 		"preact": "^10.4.7"
 	},
 	"devDependencies": {

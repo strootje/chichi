@@ -21,24 +21,24 @@ interface SubComponents {
 	Item: FunctionalComponent<MenuItemProps>;
 }
 
-export const Menu: (FunctionalComponent<MenuProps> & SubComponents) = ({ ref, children, ...props }) => (
-	<aside ref={ref} class="menu" {...props}>{children}</aside>
+export const Menu: (FunctionalComponent<MenuProps> & SubComponents) = ({ children, ...props }) => (
+	<aside class="menu" {...props}>{children}</aside>
 );
 
-export const MenuLabel: FunctionalComponent<MenuLabelProps> = ({ ref, children, ...props }) => (
-	<p ref={ref} class="menu-label" {...props}>{children}</p>
+export const MenuLabel: FunctionalComponent<MenuLabelProps> = ({ children, ...props }) => (
+	<p class="menu-label" {...props}>{children}</p>
 );
 
-export const MenuList: FunctionalComponent<MenuListProps> = ({ ref, children, ...props }) => (
-	<ul ref={ref} class="menu-list" {...props}>{children}</ul>
+export const MenuList: FunctionalComponent<MenuListProps> = ({ children, ...props }) => (
+	<ul class="menu-list" {...props}>{children}</ul>
 );
 
-export const MenuItem: FunctionalComponent<MenuItemProps> = ({ ref, children, active, ...props }) => {
+export const MenuItem: FunctionalComponent<MenuItemProps> = ({ children, active, ...props }) => {
 	const nodes = toChildArray(children);
 	const label = nodes.shift() as string;
 
 	return (
-		<li><a ref={ref} class={ClassNames({ 'is-active': !!active })} {...props}>{label}</a>{nodes}</li>
+		<li><a class={ClassNames({ 'is-active': !!active })} {...props}>{label}</a>{nodes}</li>
 	);
 }
 

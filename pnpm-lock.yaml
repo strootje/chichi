@@ -22,6 +22,24 @@ importers:
       classnames: 2.2.6
     devDependencies:
       '@types/classnames': 2.2.10
+      chichi-core: 'link:../core'
+      microbundle: 0.12.3
+      preact: 10.4.7
+      rimraf: 3.0.2
+      rollup: 2.26.5
+    specifiers:
+      '@types/classnames': ^2.2.10
+      chichi-core: '*'
+      classnames: ^2.2.6
+      microbundle: ^0.12.3
+      preact: ^10.4.7
+      rimraf: ^3.0.2
+      rollup: ^2.26.5
+  packages/core:
+    dependencies:
+      classnames: 2.2.6
+    devDependencies:
+      '@types/classnames': 2.2.10
       microbundle: 0.12.3
       preact: 10.4.7
       rimraf: 3.0.2
@@ -47,6 +65,7 @@ importers:
       '@storybook/theming': 6.0.16
       chichi-app: 'link:../app'
       chichi-base: 'link:../base'
+      chichi-core: 'link:../core'
       chichi-extensions: 'link:../extensions'
       preact: 10.4.7
     devDependencies:
@@ -73,9 +92,10 @@ importers:
       '@storybook/theming': ^6.0.16
       '@types/webpack': ^4.41.21
       babel-loader: ^8.1.0
-      chichi-app: 'workspace:*'
-      chichi-base: 'workspace:*'
-      chichi-extensions: 'workspace:*'
+      chichi-app: '*'
+      chichi-base: '*'
+      chichi-core: '*'
+      chichi-extensions: '*'
       css-loader: ^4.2.1
       preact: ^10.4.7
       rimraf: ^3.0.2

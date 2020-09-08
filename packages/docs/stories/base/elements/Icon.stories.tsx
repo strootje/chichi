@@ -7,5 +7,5 @@ export default {
 };
 
 export const Basic = () => (
-	<Icon icon="fas fa-info-circle" />
+	<Icon icon="fas fa-info-circle" color="primary" />
 );

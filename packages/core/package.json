@@ -1,5 +1,5 @@
 {
-	"name": "chichi-base",
+	"name": "chichi-core",
 	"version": "0.1.1",
 	"source": "./src/index.ts",
 	"types": "./dist/index.d.ts",
@@ -13,12 +13,10 @@
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
-		"chichi-core": "*",
 		"preact": "^10.4.7"
 	},
 	"devDependencies": {
 		"@types/classnames": "^2.2.10",
-		"chichi-core": "*",
 		"microbundle": "^0.12.3",
 		"preact": "^10.4.7",
 		"rimraf": "^3.0.2",
