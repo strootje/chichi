@@ -25,7 +25,10 @@ export interface TableRowProps extends JSX.DOMAttributes<HTMLTableRowElement> {
 export interface TableCellProps extends JSX.DOMAttributes<HTMLTableCellElement> {
 }
 
-export interface TableCellHeaderProps extends JSX.DOMAttributes<HTMLTableHeaderCellElement> {
+export interface TableHeaderCellProps extends JSX.DOMAttributes<HTMLTableHeaderCellElement> {
+}
+
+export interface TableContainerProps extends JSX.DOMAttributes<HTMLDivElement> {
 }
 
 interface SubComponents {
@@ -34,7 +37,8 @@ interface SubComponents {
 	Body: FunctionalComponent<TableBodyProps>;
 	Row: FunctionalComponent<TableRowProps>;
 	Cell: FunctionalComponent<TableCellProps>;
-	CellHeader: FunctionalComponent<TableCellHeaderProps>;
+	HeaderCell: FunctionalComponent<TableHeaderCellProps>;
+	Container: FunctionalComponent<TableContainerProps>;
 }
 
 export const Table: (FunctionalComponent<TableProps> & SubComponents) = ({ children, bordered, striped, narrow, hoverable, fullwidth, ...props }) => (
@@ -67,8 +71,12 @@ export const TableCell: FunctionalComponent<TableCellProps> = ({ children, ...pr
 	<td {...props}>{children}</td>
 );
 
-export const TableCellHeader: FunctionalComponent<TableCellHeaderProps> = ({ children, ...props }) => (
+export const TableHeaderCell: FunctionalComponent<TableHeaderCellProps> = ({ children, ...props }) => (
 	<th {...props}>{children}</th>
+);
+
+export const TableContainer: FunctionalComponent<TableContainerProps> = ({ children, ...props }) => (
+	<div class="table-container" {...props}>{children}</div>
 );
 
 Table.Head = TableHead;
@@ -76,4 +84,5 @@ Table.Foot = TableFoot;
 Table.Body = TableBody;
 Table.Row = TableRow;
 Table.Cell = TableCell;
-Table.CellHeader = TableCellHeader;
+Table.HeaderCell = TableHeaderCell;
+Table.Container = TableContainer;

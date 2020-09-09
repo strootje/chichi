@@ -7,5 +7,5 @@ export * from './Image';
 export * from './Notification';
 export * from './Progress';
 export * from './Table';
-export * from './Tags';
+export * from './Tag';
 export * from './Title';

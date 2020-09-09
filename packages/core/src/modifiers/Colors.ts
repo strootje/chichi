@@ -1,6 +1,6 @@
 export interface ColorProps {
 	light?: boolean;
-	color?: 'primary' | 'link' | 'info' | 'success' | 'warning' | 'danger' | 'black' | 'white';
+	color?: 'primary' | 'link' | 'info' | 'success' | 'warning' | 'danger' | 'black' | 'white' | 'dark';
 }
 
 export const Colors = (props: ColorProps, prefix: string = 'is') => ({

@@ -1,1 +1,1 @@
-export const fixChecks = (props: []) => props.map(prop => ({ [prop]: true })).reduce((prev, cur) => ({ ...prev, ...cur }), {});
+export const checks = (props: any[]) => props.map(prop => ({ [prop]: true })).reduce((prev, cur) => ({ ...prev, ...cur }), {});

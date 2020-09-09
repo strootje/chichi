@@ -1,13 +1,23 @@
-import { Content } from 'chichi-base';
+import { Content, ContentProps } from 'chichi-base';
 import { h } from 'preact';
 
 export default {
 	title: 'Base/Elements/Content',
-	component: Content
+	component: Content,
+	argTypes: {
+		size: {
+			name: 'Size',
+			defaultValue: 'normal',
+			control: {
+				type: 'inline-radio',
+				options: ['small', 'normal', 'medium', 'large']
+			}
+		}
+	}
 };
 
-export const WithOrderedListWithTypes = () => (
-	<Content>
+export const WithOrderedListWithTypes = (props: ContentProps) => (
+	<Content {...props}>
 		{["1", "A", "a", "I", "i"].map(type => (
 			<ol type={type}>
 				<li>Coffee</li>
@@ -18,8 +28,8 @@ export const WithOrderedListWithTypes = () => (
 	</Content>
 );
 
-export const WithOrderedListWithClasses = () => (
-	<Content>
+export const WithOrderedListWithClasses = (props: ContentProps) => (
+	<Content {...props}>
 		{["lower-alpha", "lower-roman", "upper-alpha", "upper-roman"].map(type => (
 			<ol class={"is-" + type}>
 				<li>Coffee</li>
@@ -30,8 +40,8 @@ export const WithOrderedListWithClasses = () => (
 	</Content>
 );
 
-export const WithHeaders = () => (
-	<Content>
+export const WithHeaders = (props: ContentProps) => (
+	<Content {...props}>
 		<h1>header 1</h1>
 		<h2>header 2</h2>
 		<h3>header 3</h3>

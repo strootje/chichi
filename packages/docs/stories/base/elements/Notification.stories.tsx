@@ -1,16 +1,36 @@
-import { Notification } from 'chichi-base';
+import { Notification, NotificationProps } from 'chichi-base';
 import { h } from 'preact';
-import {  action } from '@storybook/addon-actions';
 
 export default {
 	title: 'Base/Elements/Notification',
-	component: Notification
+	component: Notification,
+	argTypes: {
+		onDeleteClick: {
+			action: 'onDeleteClicked'
+		},
+
+		color: {
+			name: 'Color',
+			control: {
+				type: 'select',
+				options: ['white', 'light', 'dark', 'black', 'text', 'primary', 'link', 'info', 'success', 'warning', 'danger']
+			}
+		},
+
+		light: {
+			name: 'Is Light?',
+			defaultValue: false,
+			control: {
+				type: 'boolean'
+			}
+		}
+	}
 };
 
-export const Basic = () => (
-	<Notification>I am a Notification</Notification>
+export const Basic = (props: NotificationProps) => (
+	<Notification {...props}>I am a Notification</Notification>
 );
 
-export const WithDelete = () => (
-	<Notification delete onDeleteClick={action('clicked on delete')}>I am a Notification</Notification>
+export const WithDelete = (props: NotificationProps) => (
+	<Notification {...props} delete>I am a Notification</Notification>
 );
