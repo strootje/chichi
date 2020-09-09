@@ -1,14 +1,30 @@
+import { AlignmentProps, Alignments, ColorProps, Colors, SizeProps, Sizes } from 'chichi-core';
+import * as ClassNames from 'classnames';
 import { FunctionalComponent, h, JSX } from 'preact';
 
-interface AnchorButtonProps extends JSX.DOMAttributes<HTMLAnchorElement> {
+interface BaseButtonProps extends ColorProps, SizeProps {
+	outlined?: boolean;
+	rounded?: boolean;
+	inverted?: boolean;
+	hovered?: boolean;
+	active?: boolean;
+	focused?: boolean;
+	static?: boolean;
+	disabled?: boolean;
+}
+
+interface AnchorButtonProps extends JSX.DOMAttributes<HTMLAnchorElement>, BaseButtonProps {
 	href: string;
+	loading?: boolean;
 }
 
-interface ButtonButtonProps extends JSX.DOMAttributes<HTMLButtonElement> {
+interface ButtonButtonProps extends JSX.DOMAttributes<HTMLButtonElement>, BaseButtonProps {
+	loading?: boolean;
 }
 
-interface InputButtonProps extends JSX.DOMAttributes<HTMLInputElement> {
+interface InputButtonProps extends Omit<JSX.DOMAttributes<HTMLInputElement>, 'children'>, BaseButtonProps {
 	type: 'submit' | 'reset';
+	children?: string | string[];
 }
 
 export type ButtonProps
@@ -16,24 +32,50 @@ export type ButtonProps
 	| ButtonButtonProps
 	| InputButtonProps;
 
-const AnchorButton: FunctionalComponent<AnchorButtonProps> = ({ ref, children, href, ...props }) => (
-	<a ref={ref} class="button" href={href} {...props}>{children}</a>
+export interface ButtonGroupProps extends JSX.DOMAttributes<HTMLParagraphElement>, AlignmentProps {
+	addons?: boolean;
+}
+
+interface SubComponents {
+	Group: FunctionalComponent<ButtonGroupProps>;
+}
+
+const buildClasses = ({ outlined, rounded, inverted, hovered, active, focused, static: _static, ...props }: Partial<ButtonProps>, size: SizeProps) => ({
+	...Colors(props),
+	...Sizes(size),
+	['is-outlined']: !!outlined,
+	['is-rounded']: !!rounded,
+	['is-inverted']: !!inverted,
+	['is-hovered']: !!hovered,
+	['is-active']: !!active,
+	['is-focused']: !!focused,
+	['is-static']: !!_static
+});
+
+const AnchorButton: FunctionalComponent<AnchorButtonProps> = ({ children, size, href, loading, ...props }) => (
+	<a class={ClassNames('button', buildClasses(props, { size }), { ['is-loading']: !!loading })} href={href} {...props}>{children}</a>
 );
 
-const ButtonButton: FunctionalComponent<ButtonButtonProps> = ({ ref, children, ...props }) => (
-	<button ref={ref} class="button" {...props}>{children}</button>
+const ButtonButton: FunctionalComponent<ButtonButtonProps> = ({ children, size, loading, ...props }) => (
+	<button class={ClassNames('button', buildClasses(props, { size }), { ['is-loading']: !!loading })} {...props}>{children}</button>
 );
 
-const InputButton: FunctionalComponent<InputButtonProps> = ({ ref, children, type, ...props }) => (
-	<input ref={ref} class="button" type={type}>{children}</input>
+const InputButton: FunctionalComponent<InputButtonProps> = ({ children, size, type, ...props }) => (
+	<input class={ClassNames('button', buildClasses(props, { size }))} type={type} {...props} value={children?.toString()} />
 );
 
-export const Button: FunctionalComponent<ButtonProps> = props => {
+export const Button: (FunctionalComponent<ButtonProps> & SubComponents) = props => {
 	if ('href' in props) {
-		return <AnchorButton {...props} />
+		return <AnchorButton {...props} />;
 	} else if ('type' in props) {
-		return <InputButton {...props} />
+		return <InputButton {...props} />;
 	} else {
-		return <ButtonButton {...props} />
+		return <ButtonButton {...props} />;
 	}
 };
+
+export const ButtonGroup: FunctionalComponent<ButtonGroupProps> = ({ children, addons, ...props }) => (
+	<p class={ClassNames('buttons', { ...Alignments(props), ['has-addons']: !!addons })} {...props}>{children}</p>
+);
+
+Button.Group = ButtonGroup;

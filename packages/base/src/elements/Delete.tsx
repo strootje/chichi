@@ -1,8 +1,10 @@
+import { SizeProps, Sizes } from 'chichi-core';
+import * as ClassNames from 'classnames';
 import { FunctionalComponent, h, JSX } from 'preact';
 
-export interface DeleteProps extends JSX.DOMAttributes<HTMLAnchorElement> {
+export interface DeleteProps extends JSX.DOMAttributes<HTMLAnchorElement>, SizeProps {
 }
 
-export const Delete: FunctionalComponent<DeleteProps> = ({ ref, children, ...props }) => (
-	<a ref={ref} class="delete" {...props}>{children}</a>
+export const Delete: FunctionalComponent<DeleteProps> = ({ children, size, ...props }) => (
+	<a class={ClassNames('delete', { ...Sizes({ size }) })} {...props}>{children}</a>
 );

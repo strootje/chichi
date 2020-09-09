@@ -1,16 +1,13 @@
 {
-	"name": "chichi-app",
+	"name": "chichi-core",
 	"version": "0.1.1",
 	"source": "./src/index.ts",
 	"types": "./dist/index.d.ts",
-	"style": "./dist/chichi-app.min.css",
 	"main": "./dist/index.js",
 	"scripts": {
 		"clean": "rimraf ./dist *.tgz",
-		"bundle:assets": "sass ./src/assets/styles/_all.scss ./dist/chichi-app.min.css",
-		"bundle:scripts": "microbundle",
 		"prebundle": "pnpm run clean",
-		"bundle": "pnpm run bundle:assets && pnpm run bundle:scripts"
+		"bundle": "microbundle"
 	},
 	"dependencies": {
 		"classnames": "^2.2.6"
@@ -23,8 +20,7 @@
 		"microbundle": "^0.12.3",
 		"preact": "^10.4.7",
 		"rimraf": "^3.0.2",
-		"rollup": "^2.26.5",
-		"sass": "^1.26.10"
+		"rollup": "^2.26.5"
 	},
 	"publishConfig": {
 		"access": "public"

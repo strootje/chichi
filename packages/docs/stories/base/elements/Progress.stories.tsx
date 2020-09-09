@@ -1,9 +1,9 @@
-import { Icon, IconProps } from 'chichi-base';
+import { Progress, ProgressProps } from 'chichi-base';
 import { h } from 'preact';
 
 export default {
-	title: 'Base/Elements/Icon',
-	component: Icon,
+	title: 'Base/Elements/Progress',
+	component: Progress,
 	argTypes: {
 		color: {
 			name: 'Color',
@@ -22,16 +22,23 @@ export default {
 			}
 		},
 
-		icon: {
-			name: 'Icon',
-			defaultValue: 'fas fa-home',
+		value: {
+			name: 'Value',
 			control: {
-				type: 'text'
+				type: 'number'
+			}
+		},
+
+		max: {
+			name: 'Maximum Value',
+			defaultValue: 100,
+			control: {
+				type: 'number'
 			}
 		}
 	}
 };
 
-export const Basic = (props: IconProps) => (
-	<Icon {...props} />
+export const Basic = (props: ProgressProps) => (
+	<Progress {...props}>Progress</Progress>
 );
